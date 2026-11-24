@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الدعم والتواصل | تهامة تكنو</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+ 
+</head>
+<body>
+
+<header class="header">
+    <div class="container nav">
+
+        <a href="index.html" class="logo">
+            <span class="logo-icon">T</span>
+            تهامة <span>تكنو</span>
+        </a>
+
+        <input type="checkbox" id="menu">
+        <label for="menu" class="menu-btn">☰</label>
+
+        <nav>
+            <a href="index.html">الرئيسية</a>
+            <a href="services.html">الخدمات</a>
+            <a href="about.html">عنّا</a>
+            <a class="active" href="contact.html">تواصل</a>
+        </nav>
+
+        <a class="nav-button" href="#contactForm">اطلب خدمة</a>
+
+    </div>
+</header>
+
+<section class="page-banner">
+    <div class="container">
+        <span>نحن هنا لمساعدتك</span>
+        <h1>يسعدنا تواصلك معنا</h1>
+        <p>
+            سواء كنت فردًا أو تمثل شركة،
+            فريق تهامة تكنو مستعد لاستقبال استفساراتك.
+        </p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container contact-layout">
+
+        <div class="contact-info">
+
+            <h2>تواصل مع فريقنا</h2>
+
+            <p>
+                نحرص على الاستماع إلى احتياجك
+                ومساعدتك في الوصول إلى الخدمة المناسبة.
+            </p>
+
+            <div class="info-box">
+                <span>📍</span>
+                <div>
+                    <strong>موقعنا</strong>
+                    <p>الرياض، المملكة العربية السعودية</p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <span>💬</span>
+                <div>
+                    <strong>خدمة واتساب</strong>
+                    <p>استقبل ردودنا واستفسر عن خدمات الصيانة.</p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <span>🛠️</span>
+                <div>
+                    <strong>الدعم الفني</strong>
+                    <p>نساعدك في توضيح المشكلة وتحديد الخدمة المناسبة.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="contact-form">
+
+            <h2>أرسل طلبك الآن</h2>
+
+            <form id="contactForm">
+
+                <label for="name">الاسم الكامل</label>
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="اكتب اسمك"
+                    required
+                >
+
+                <label for="phone">رقم الجوال</label>
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="05xxxxxxxx"
+                    required
+                >
+
+                <label for="type">نوع العميل</label>
+                <select id="type">
+                    <option value="فرد">فرد</option>
+                    <option value="شركة">شركة</option>
+                </select>
+
+                <label for="service">الخدمة المطلوبة</label>
+                <select id="service">
+                    <option>صيانة الحواسيب</option>
+                    <option>صيانة الأجهزة الذكية</option>
+                    <option>الإصلاح الإلكتروني</option>
+                    <option>الدعم الفني للشركات</option>
+                    <option>الفحص والتشخيص</option>
+                    <option>تحسين أداء الأجهزة</option>
+                    <option>خدمة أخرى</option>
+                </select>
+
+                <label for="message">تفاصيل الطلب</label>
+                <textarea
+                    id="message"
+                    placeholder="اكتب تفاصيل المشكلة أو استفسارك..."
+                    required
+                ></textarea>
+
+                <button type="submit" class="btn primary full-btn">
+                    إرسال الطلب عبر واتساب ←
+                </button>
+
+            </form>
+
+            <p class="note">
+                سيتم تحويلك إلى واتساب لإرسال طلبك،
+                ولن يتم حفظ بياناتك في الموقع.
+            </p>
+
+        </div>
+
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <h3>تهامة تكنو</h3>
+        <p>حلول تقنية وصيانة إلكترونية في الرياض</p>
+        <p>© 2026 جميع الحقوق محفوظة</p>
+    </div>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/966504322706" target="_blank">
+    واتساب ✆
+</a>
+
+<script>
+
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const type = document.getElementById("type").value;
+    const service = document.getElementById("service").value;
+    const message = document.getElementById("message").value.trim();
+
+    if (!name || !phone || !message) {
+        alert("فضلاً أكمل جميع البيانات المطلوبة.");
+        return;
+    }
+
+    const whatsappNumber = "966504322706";
+
+    const text =
+        "مرحباً تهامة تكنو، لدي طلب خدمة جديد:\n\n" +
+        "الاسم: " + name + "\n" +
+        "رقم الجوال: " + phone + "\n" +
+        "نوع العميل: " + type + "\n" +
+        "الخدمة: " + service + "\n" +
+        "تفاصيل الطلب: " + message;
+
+    const whatsappURL =
+        "https://wa.me/" + whatsappNumber +
+        "?text=" + encodeURIComponent(text);
+
+    window.location.href = whatsappURL;
+
+});
+
+</script>
+
+</body>
+</html>
